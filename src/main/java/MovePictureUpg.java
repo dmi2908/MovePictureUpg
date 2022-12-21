@@ -36,7 +36,7 @@ public class MovePictureUpg extends JFrame{
 
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyText(e.getKeyCode()) == "Left") {
-                    x -= 50;
+                    x -= e.isShiftDown() ? 100 : 50;
                     if (x >= 0) {
                         label.setBounds(x, y, size, size);
                         add(label);
@@ -45,7 +45,7 @@ public class MovePictureUpg extends JFrame{
                     }
                 }
                 if (e.getKeyText(e.getKeyCode()) == "Right") {
-                    x += 50;
+                    x += e.isShiftDown() ? 100 : 50;;
                     if (x <= (width - size)) {
                         label.setBounds(x, y, size, size);
                         add(label);
@@ -54,7 +54,7 @@ public class MovePictureUpg extends JFrame{
                     }
                 }
                 if (e.getKeyText(e.getKeyCode()) == "Up") {
-                    y -= 50;
+                    y -= e.isShiftDown() ? 100 : 50;;
                     if (y >= 0) {
                         label.setBounds(x, y, size, size);
                         add(label);
@@ -64,7 +64,7 @@ public class MovePictureUpg extends JFrame{
                 }
 
                 if (e.getKeyText(e.getKeyCode()) == "Down") {
-                    y += 50;
+                    y += e.isShiftDown() ? 100 : 50;;
                     if (y <= (height - size)) {
                         label.setBounds(x, y, size, size);
                         add(label);
